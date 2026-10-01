@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;700&display=swap');
+:root{--deep:#06101f;--lapis:#0d2748;--lapis2:#14376388;--turq:#22b8b0;--gold:#e2a93b;--ivory:#f3ead7;--mute:#9fb0c6}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--ivory);font:400 1.05rem/1.65 Manrope,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.top{position:fixed;inset:0 0 auto;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1rem,4vw,3rem);background:linear-gradient(var(--deep),transparent)}
+.logo{font:1.6rem Gloock,serif;text-decoration:none;color:var(--gold)}
+.top nav{display:flex;gap:1.4rem}
+.top nav a{text-decoration:none;color:var(--mute);transition:color .2s}
+.top nav a:hover{color:var(--ivory)}
+
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:7rem clamp(1rem,4vw,3rem) 2rem;overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,var(--lapis),var(--deep) 70%)}
+#viz{position:absolute;inset:0;width:100%;height:100%}
+.hero-text{position:relative;max-width:30rem;margin-bottom:2rem}
+h1{font:clamp(4.5rem,13vw,10rem)/.9 Gloock,serif;letter-spacing:-.02em}
+.hero-text p{color:var(--mute);margin:1.2rem 0 1.6rem}
+.btn{background:var(--gold);color:var(--deep);border:0;border-radius:999px;padding:.8rem 1.6rem;font:700 1rem Manrope,sans-serif;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:scale(1.04)}
+
+.strings{position:relative;display:flex;gap:clamp(.3rem,1.4vw,1rem);height:9.5rem}
+.string{flex:1;position:relative;background:linear-gradient(var(--lapis2),transparent);border:1px solid #ffffff1f;border-radius:14px;color:var(--mute);font:inherit;font-size:.85rem;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:.6rem;transition:border-color .2s}
+.string:hover{border-color:var(--gold)}
+.string b{color:var(--ivory);font-size:1rem}
+.string::before{content:'';position:absolute;top:.8rem;bottom:3.4rem;left:50%;width:2px;margin-left:-1px;background:var(--gold)}
+.string.on::before{animation:vib .6s ease-out}
+@keyframes vib{0%{transform:translateX(-6px)}20%{transform:translateX(6px)}40%{transform:translateX(-4px)}60%{transform:translateX(3px)}80%{transform:translateX(-1px)}100%{transform:none}}
+
+.sec{padding:5rem clamp(1rem,4vw,3rem);max-width:72rem;margin:auto}
+h2{font:clamp(2rem,5vw,3.2rem)/1.05 Gloock,serif;margin-bottom:.8rem}
+.lead{color:var(--mute);max-width:40rem;margin-bottom:2rem}
+
+.seq{background:var(--lapis);border-radius:24px;padding:1.4rem;overflow-x:auto}
+.tracks{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.2rem}
+.track{background:transparent;color:var(--ivory);border:1px solid #ffffff33;border-radius:999px;padding:.45rem 1rem;font:inherit;font-size:.95rem;cursor:pointer}
+.track[aria-current=true]{background:var(--turq);border-color:var(--turq);color:var(--deep);font-weight:700}
+.grid{display:grid;grid-template-columns:3rem repeat(16,1fr);gap:4px;min-width:36rem;align-items:center}
+.grid span{color:var(--mute);font-size:.85rem}
+.cell{aspect-ratio:1;border-radius:6px;border:1px solid #ffffff22;background:#ffffff0d;cursor:pointer;padding:0}
+.cell[aria-pressed=true]{background:var(--gold);border-color:var(--gold)}
+.cell.now{outline:2px solid var(--turq);outline-offset:1px}
+.ctl{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;margin-top:1.4rem}
+.ctl label{display:flex;gap:.6rem;align-items:center;color:var(--mute)}
+input[type=range]{accent-color:var(--gold)}
+.now{color:var(--turq);font-weight:500}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.card{border-top:3px solid var(--gold);background:linear-gradient(var(--lapis),transparent);border-radius:4px 4px 18px 18px;padding:1.4rem}
+.card:nth-child(even){border-top-color:var(--turq)}
+.card h3{font:1.6rem Gloock,serif;margin-bottom:.4rem}
+.card p{color:var(--mute);margin-bottom:.8rem}
+.link{background:none;border:0;border-bottom:1px solid var(--gold);color:var(--gold);font:700 .95rem Manrope,sans-serif;padding:0 0 2px;cursor:pointer}
+
+footer{text-align:center;color:var(--mute);font-size:.9rem;padding:2rem 1rem 3rem}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
